@@ -6,13 +6,13 @@ import Circle from '../Circle/Circle';
 
 const boardBox = (props) => {
     let figureToShow = null;
-    if(props.boxValue === "1") {
+    if(props.boxValue === 1) {
         figureToShow = <Cross></Cross>
-    } else if(props.boxValue==="0"){
+    } else if(props.boxValue===0){
         figureToShow = <Circle></Circle>
     }
     return (
-        <div className="board-box">
+        <div onClick={props.click} className="board-box">
             {figureToShow}
         </div>
     );
