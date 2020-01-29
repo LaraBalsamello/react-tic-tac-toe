@@ -1,0 +1,10 @@
+.full-board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 350px;   
+    :nth-child(3n) {
+        background-color: blue;
+    }
+}
