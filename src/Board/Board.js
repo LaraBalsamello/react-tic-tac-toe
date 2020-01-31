@@ -124,100 +124,58 @@ class Board extends Component {
             //bloque para movimientos en horizontal 
 
             if (enemy[0] === 0 && enemy[1] === 1) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(2, indexesAvailable);
-                console.log('moving to five')
             } else if (enemy[0] === 1 && enemy[1] === 0) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(2, indexesAvailable);
             } else if (enemy[0] === 1 && enemy[1] === 2) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(0, indexesAvailable);
             } else if (enemy[0] === 2 && enemy[1] === 1) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(0, indexesAvailable);
             } else if (enemy[0] === 3 && enemy[1] === 4) {
-                console.log('moving to five')
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(5, indexesAvailable);
             } else if (enemy[0] === 4 && enemy[1] === 3) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(5, indexesAvailable);
             } else if (enemy[0] === 4 && enemy[1] === 5) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(3, indexesAvailable)
             } else if (enemy[0] === 5 && enemy[1] === 4) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(3, indexesAvailable);
             } else if (enemy[0] === 6 && enemy[1] === 7) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(8, indexesAvailable);
             } else if (enemy[0] === 7 && enemy[1] === 6) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(8, indexesAvailable);
             } else if (enemy[0] === 7 && enemy[1] === 8) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(6, indexesAvailable)
             } else if (enemy[0] === 8 && enemy[1] === 7) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(6, indexesAvailable);
 
                 //bloque para movimientos en vertical 
 
             } else if (enemy[0] + 3 === enemy[1] && enemy[1] + 3 <= 8) {
                 let moveTo = enemy[1] + 3;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[1] + 3 === enemy[0] && enemy[0] + 3 <= 8) {
                 let moveTo = enemy[0] + 3;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[0] - 3 === enemy[1] && enemy[1] - 3 >= 0) {
                 let moveTo = enemy[1] - 3;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[1] - 3 === enemy[0] && enemy[0] - 3 >= 0) {
                 let moveTo = enemy[0] - 3;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             }
             //bloques para salteo horizontal
 
             else if (enemy[0] + 2 === enemy[1] && enemy[0] + 1 <= 8 && enemy[0] + 1 <= 8) {
                 let moveTo = enemy[0] + 1;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[1] + 2 === enemy[0] && enemy[1] + 1 <= 8) {
                 let moveTo = enemy[1] + 1;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[0] - 2 === enemy[1] && enemy[1] + 1 >= 0) {
                 let moveTo = enemy[1] + 1;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[1] - 2 === enemy[0] && enemy[0] + 1 >= 0) {
                 let moveTo = enemy[0] + 1;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             }
 
@@ -225,59 +183,35 @@ class Board extends Component {
 
             else if (enemy[0] + 6 === enemy[1] && enemy[0] + 3 <= 8) {
                 let moveTo = enemy[0] + 3;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[1] + 6 === enemy[0] && enemy[1] + 3 <= 8) {
                 let moveTo = enemy[1] + 3;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[0] - 6 === enemy[1] && enemy[1] - 3 >= 0) {
                 let moveTo = enemy[1] - 3;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[1] - 6 === enemy[0] && enemy[0] - 3 >= 0) {
                 let moveTo = enemy[0] - 3;
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             }
 
             //bloque para diagonal
 
             else if (enemy[0] === 0 && enemy[1] === 4) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(8, indexesAvailable);
             } else if (enemy[0] === 4 && enemy[1] === 0) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(8, indexesAvailable);
             } else if (enemy[0] === 4 && enemy[1] === 8) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(0, indexesAvailable);
             } else if (enemy[0] === 8 && enemy[1] === 4) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(0, indexesAvailable);
             } else if (enemy[0] === 6 && enemy[1] === 2) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(4, indexesAvailable)
             } else if (enemy[1] === 6 || enemy[0] === 2) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(4, indexesAvailable)
             } else if (enemy[0] === 0 && enemy[1] === 8) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(4, indexesAvailable)
             } else if (enemy[1] === 0 || enemy[0] === 8) {
-                console.log('moving to five')
-
                 this.moveRobotSetNewBoard(4, indexesAvailable)
             } else {
                 this.moveRandomly(indexesAvailable);
