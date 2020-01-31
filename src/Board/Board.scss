@@ -3,8 +3,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
-    width: 350px;   
+    width: 350px;  
+    justify-content: center;
+    align-items: center; 
     :nth-child(3n) {
-        background-color: blue;
+        // background-color: blue;
     }
+    z-index: 9999;
 }
