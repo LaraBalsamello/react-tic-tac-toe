@@ -88,12 +88,9 @@ class Board extends Component {
     }
 
     robotMoves = () => {
-        //This function is for the movility of the robot represented by the circles.
-        //The function below grabs all the available positions on the current board.
-
-        this.analizeBoard()
-
+        this.analizeBoard();
     }
+
     moveRandomly = (indexesAvailable) => {
         let position = Math.floor((Math.random() * (indexesAvailable.length - 1)));
         let newBoard = [...this.state.fullBoard];
@@ -121,8 +118,6 @@ class Board extends Component {
         if (enemy.length <= 1) {
             this.moveRandomly(indexesAvailable);
         } else {
-            //bloque para movimientos en horizontal 
-
             if (enemy[0] === 0 && enemy[1] === 1) {
                 this.moveRobotSetNewBoard(2, indexesAvailable);
             } else if (enemy[0] === 1 && enemy[1] === 0) {
@@ -147,9 +142,6 @@ class Board extends Component {
                 this.moveRobotSetNewBoard(6, indexesAvailable)
             } else if (enemy[0] === 8 && enemy[1] === 7) {
                 this.moveRobotSetNewBoard(6, indexesAvailable);
-
-                //bloque para movimientos en vertical 
-
             } else if (enemy[0] + 3 === enemy[1] && enemy[1] + 3 <= 8) {
                 let moveTo = enemy[1] + 3;
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
@@ -162,10 +154,7 @@ class Board extends Component {
             } else if (enemy[1] - 3 === enemy[0] && enemy[0] - 3 >= 0) {
                 let moveTo = enemy[0] - 3;
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
-            }
-            //bloques para salteo horizontal
-
-            else if (enemy[0] + 2 === enemy[1] && enemy[0] + 1 <= 8 && enemy[0] + 1 <= 8) {
+            } else if (enemy[0] + 2 === enemy[1] && enemy[0] + 1 <= 8 && enemy[0] + 1 <= 8) {
                 let moveTo = enemy[0] + 1;
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[1] + 2 === enemy[0] && enemy[1] + 1 <= 8) {
@@ -177,11 +166,7 @@ class Board extends Component {
             } else if (enemy[1] - 2 === enemy[0] && enemy[0] + 1 >= 0) {
                 let moveTo = enemy[0] + 1;
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
-            }
-
-            //bloques para salteo vertical
-
-            else if (enemy[0] + 6 === enemy[1] && enemy[0] + 3 <= 8) {
+            } else if (enemy[0] + 6 === enemy[1] && enemy[0] + 3 <= 8) {
                 let moveTo = enemy[0] + 3;
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
             } else if (enemy[1] + 6 === enemy[0] && enemy[1] + 3 <= 8) {
@@ -193,11 +178,7 @@ class Board extends Component {
             } else if (enemy[1] - 6 === enemy[0] && enemy[0] - 3 >= 0) {
                 let moveTo = enemy[0] - 3;
                 this.moveRobotSetNewBoard(moveTo, indexesAvailable);
-            }
-
-            //bloque para diagonal
-
-            else if (enemy[0] === 0 && enemy[1] === 4) {
+            } else if (enemy[0] === 0 && enemy[1] === 4) {
                 this.moveRobotSetNewBoard(8, indexesAvailable);
             } else if (enemy[0] === 4 && enemy[1] === 0) {
                 this.moveRobotSetNewBoard(8, indexesAvailable);
@@ -220,19 +201,21 @@ class Board extends Component {
 
     }
 
-    moveRobotSetNewBoard = (index, indexesAvaible) => {
-        indexesAvaible.map(available => {
-            if (available === index) {
+    moveRobotSetNewBoard = (index, indexesAvailable) => {
+        console.log(indexesAvailable)
+        for (let i = 0; i < indexesAvailable.length; i++) {
+            const element = indexesAvailable[i];
+            if(element === index){
                 let newBoard = [...this.state.fullBoard];
                 newBoard[index] = 0;
                 this.setState({ fullBoard: newBoard, playerActive: 1 });
+                break;
+            } else if(i === index.length){
+                console.log('not found')
+                this.moveRandomly(indexesAvailable);
             }
-            return console.log('moving robot')
-        });
+        }
     }
-
-
-    //::::::::::::::::::::::::::::::::::::::::::::::::..::::::::::::::::::::::::::
 
     setInitialPlayer = () => {
         this.setState({ playerActive: Math.round(Math.random()) })
