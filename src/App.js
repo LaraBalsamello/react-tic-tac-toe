@@ -7,6 +7,16 @@ function App() {
     <div className="App">
       <h1>Try winnig against a smart robot!</h1>
       <Board></Board>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>
+      <div className="background-circles"></div>      
     </div>
   );
 }
